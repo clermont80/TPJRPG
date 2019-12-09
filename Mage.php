@@ -14,17 +14,17 @@ class Mage
         $this->defense=$newdefense;
     }
     
-    public function attackobject($Personnage)
+    public function attackobject($Guerrier)
     {
-        $damage= $Personnage->defobject($Personnage->getForce());
-        $Personnage->sethp()-$damage;
-        $Personnage->setatck()-30;
+        $Guerrier->loosehp($Guerrier->defobject($this->atck));
+        $Guerrier->setatckapresreduction(30);
+        
     }
 
     public function defobject($force)
     {
-        $finalhp = $this->defense -= $force;
-        return $finalhp-= $force;
+        $finalhp = $force- $this->defense;
+        return $finalhp;
     }
 
     public function getForce()
@@ -34,12 +34,18 @@ class Mage
 
     public function setatck($newatck)
     {
-        return $this->atck=$newatck;
+         $this->atck=$newatck;
     }
 
     public function sethp($newhp)
     {
         return $this->hp=$newhp;
+    }
+
+    public function loosehp($damage)
+    {
+        echo "le Mage perd ".$damage." pv ";
+        $this->hp -= $damage;
     }
 
     public function setdefense($newdefense)
@@ -49,7 +55,7 @@ class Mage
 
     public function displayhp()
     {
-        echo $this->hp;
+        echo '<p> la vie du mage est de '.$this->hp.'pv </p>';
     }
 
 
