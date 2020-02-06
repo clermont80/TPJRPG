@@ -17,6 +17,8 @@ class Mage
     public function attackobject($Guerrier)
     {
         $Guerrier->loosehp($Guerrier->defobject($this->atck));
+        $valeur= $Guerrier->getForce();
+        echo $valeur;
         $Guerrier->setatckapresreduction(30);
         
     }
@@ -46,6 +48,11 @@ class Mage
     {
         echo "le Mage perd ".$damage." pv ";
         $this->hp -= $damage;
+    }
+
+    public function sendhp()
+    {
+        return $this->hp;
     }
 
     public function setdefense($newdefense)
