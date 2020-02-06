@@ -10,6 +10,6 @@ function getLife()
 
 function modiflife(id,text)
 {
-     document.getElementById(id).innerHTML = text;
+    var e = document.getElementById(id).innerHTML = text;
 
 }
