@@ -8,10 +8,12 @@
 //je pourrais faire des actions sur ma BDD    
 
 $magtamp = new Mage(300,25,90);
-$guerriertamp = new Guerrier(300,50,100); 
-$vieactuelle = $magetamp->sendhp();
+$guerriertamp = new Guerrier(300,50,100);
+$guerriertamp->setatck(120);   
 $guerriertamp->attackobject($magtamp);
-$vierestante[0] = $magetamp->sendhp();
+$vierestante = array();
+$vierestante[0] = $magtamp->sendhp();
+
 
 
 

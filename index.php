@@ -1,6 +1,6 @@
 <?php require ("Mage.php"); ?>
 <?php require ("Guerrier.php"); ?>
-<script type="text/javascript" src="codemat.js"> </script>
+<script type="text/javascript" src="codemat.js"></script>
 
 <?php
 
@@ -11,8 +11,9 @@
     $mage1->displayhp();
     
     ?>
-    <button onclick="getLife()">afficher vie</button>
-    <div id="life">100</div>
+    <button onclick="getLife()">vie mage</button>
+    <div id="life">300<span>%</span></div>
+    
     <?php
    
 
@@ -28,14 +29,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 ?>
+
+
+
+
+
+
+
+
+
